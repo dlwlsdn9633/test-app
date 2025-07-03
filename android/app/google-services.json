@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "493347575772",
+    "project_id": "daeaeng-fc7b5",
+    "storage_bucket": "daeaeng-fc7b5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493347575772:android:58dfd81b1f2a8e1c0de119",
+        "android_client_info": {
+          "package_name": "com.example.daeaeng"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDonFVImK31DcGQ_eEY7tbpTpKWd9pQ57Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 모든 외부 저장소 경로 허용 -->
+    <external-path name="external_files" path="." />
+</paths>
