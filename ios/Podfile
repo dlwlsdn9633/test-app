@@ -1,4 +1,4 @@
-# ios/Podfile
+# ios/Podfile 수정본
 
 platform :ios, '13.0'
 
@@ -13,6 +13,9 @@ project 'Runner', {
 
 install! 'cocoapods',
          :deterministic_uuids => false
+
+# flutter_root 변수 선언 추가 (이 부분이 누락되어 에러 발생)
+flutter_root = File.expand_path(File.join(__dir__, '..', '..', 'flutter'))
 
 require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
 
