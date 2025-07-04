@@ -1,8 +1,5 @@
-# ios/Podfile 수정본
-
 platform :ios, '13.0'
 
-# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 project 'Runner', {
@@ -14,8 +11,7 @@ project 'Runner', {
 install! 'cocoapods',
          :deterministic_uuids => false
 
-# flutter_root 변수 선언 추가 (이 부분이 누락되어 에러 발생)
-flutter_root = File.expand_path(File.join(__dir__, '..', '..', 'flutter'))
+flutter_root = ENV['FLUTTER_ROOT'] || File.expand_path(File.join(__dir__, '..', '..', 'flutter'))
 
 require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
 
