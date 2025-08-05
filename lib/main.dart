@@ -12,20 +12,23 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+
+//import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'constants.dart';
 
+/*
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
   debugPrint("🔕 백그라운드 메시지 수신: ${message.messageId}");
 }
+*/
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  //await Firebase.initializeApp();
+  //FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
   runApp(const MyApp());
 }
@@ -63,9 +66,16 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
     const androidInit = AndroidInitializationSettings('@mipmap/ic_launcher');
-    const initSettings = InitializationSettings(android: androidInit);
+    // ✅ iOS용 설정 추가
+    const iOSInit = DarwinInitializationSettings();
+
+    const initSettings = InitializationSettings(
+      android: androidInit,
+      iOS: iOSInit, // 👈 이거 꼭 추가해야 해
+    );
     flutterLocalNotificationsPlugin.initialize(initSettings);
 
+    /*
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       debugPrint('🔔 포그라운드 메시지 수신됨!');
       if (message.notification != null) {
@@ -101,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
         debugPrint('📲 FCM 디바이스 토큰 앱에 저장됨: $token');
       }
     });
-
+*/
     _requestPermissions();
 
     // FlutterDownloader 콜백 등록
@@ -426,22 +436,28 @@ class _MyHomePageState extends State<MyHomePage> {
       return;
     }
 
+    debugPrint("download path: $dir");
+
     final savePath = dir.path;
 
     final uri = Uri.parse(url);
     final fileName = uri.queryParameters['vf'] ?? 'downloaded_file.jpg';
 
     debugPrint("filename: $fileName");
-    final taskId = await FlutterDownloader.enqueue(
-      url: url,
-      savedDir: savePath,
-      fileName: fileName,
-      showNotification: true,
-      openFileFromNotification: true,
-      saveInPublicStorage: Platform.isAndroid, // iOS는 false
-    );
+    try {
+      final taskId = await FlutterDownloader.enqueue(
+        url: url,
+        savedDir: savePath,
+        fileName: fileName,
+        showNotification: true,
+        openFileFromNotification: true,
+        saveInPublicStorage: Platform.isAndroid, // iOS는 반드시 false
+      );
 
-    debugPrint('다운로드 작업 등록됨, taskId: $taskId, 파일명: $fileName');
+      debugPrint('다운로드 작업 등록됨, taskId: $taskId, 파일명: $fileName');
+    } catch (e) {
+      debugPrint('다운로드 실패: $e');
+    }
   }
 
   @override
@@ -468,21 +484,6 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       },
       child: Scaffold(
-        appBar: Platform.isIOS
-            ? AppBar(
-                title: const Text('대아엔지니어링'),
-                leading: IconButton(
-                  icon: const Icon(Icons.arrow_back_ios),
-                  onPressed: () async {
-                    if (await _controller.canGoBack()) {
-                      _controller.goBack();
-                    } else {
-                      exit(0); // 더 이상 뒤로 갈 수 없으면 종료
-                    }
-                  },
-                ),
-              )
-            : null,
         body: Stack(
           children: [
             WebViewWidget(controller: _controller),
