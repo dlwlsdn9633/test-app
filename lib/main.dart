@@ -334,11 +334,13 @@ class _MyHomePageState extends State<MyHomePage> {
         onMessageReceived: (JavaScriptMessage message) async {
           debugPrint("SNSLoginChannel 메시지 수신: ${message.message}");
           // JSP에서 'LOGIN_SUCCESS' 메시지를 보냈을 때 처리합니다.
+          debugPrint("message: ${message.message}");
           if (message.message.startsWith('LOGIN_SUCCESS')) {
             final no = message.message.split(':')[1];
             if (_fcmToken != null && no.isNotEmpty) {
               await sendFcmTokenToServer(no, _fcmToken!);
             }
+            _controller.runJavaScript("window.location.href='/index.jsp'");
           } else {
             debugPrint('알 수 없는 SNSLoginChannel message: ${message.message}');
           }
@@ -354,6 +356,7 @@ class _MyHomePageState extends State<MyHomePage> {
               await sendFcmTokenToServer(no, _fcmToken!);
             }
           }
+          //_controller.runJavaScript("window.location.href='/index.jsp'");
         },
       )
       ..loadRequest(Uri.parse('https://daeaeng.vizensoft.com/'));
@@ -370,7 +373,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       );
       if (response.statusCode == 200) {
-        debugPrint('✅ FCM 토큰 서버 전송 성공');
+        debugPrint('✅ FCM 토큰 서버 전송 성공 $fcmToken');
       } else {
         debugPrint('❌ FCM 토큰 서버 전송 실패: ${response.statusCode}');
       }

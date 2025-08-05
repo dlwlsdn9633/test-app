@@ -50,6 +50,7 @@ dependencies:
   flutter_local_notifications: ^19.3.0
   get: ^4.7.2
   firebase_core: ^3.14.0
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +73,19 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/splash.png
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/splash.png
+  android: true
+  ios: true
+  
+  android_12:
+    #image: null  # Adaptive icon 비활성화 (동그라미 제거)
+    image: assets/logo-splash.png  # 전체 이미지로 설정
+    color: "#f97917"
 
   # To add assets to your application, add an assets section, like this:
   # assets:
