@@ -1,6 +1,7 @@
 import Flutter
 import UIKit
-import Firebase
+//import Firebase
+import flutter_downloader
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
@@ -9,10 +10,11 @@ import Firebase
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     // ✅ Firebase 초기화
-    FirebaseApp.configure()
+    //FirebaseApp.configure()
 
     // ✅ Flutter 플러그인 등록
     GeneratedPluginRegistrant.register(with: self)
+    FlutterDownloaderPlugin.setPluginRegistrantCallback(registerPlugins)
 
     // ✅ 알림 등록 (iOS 10 이상에서 사용자에게 알림 권한 요청)
     if #available(iOS 10.0, *) {
@@ -20,4 +22,10 @@ import Firebase
     }
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
+}
+
+private func registerPlugins(registry: FlutterPluginRegistry) {
+    if (!registry.hasPlugin("FlutterDownloaderPlugin")) {
+       FlutterDownloaderPlugin.register(with: registry.registrar(forPlugin: "FlutterDownloaderPlugin")!)
+    }
 }
