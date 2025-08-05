@@ -62,6 +62,13 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
 
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/dae_new_icon02.png"
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -72,18 +79,18 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/splash.png
+    - assets/dae_new_icon01.png
 
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/splash.png
+  image: assets/dae_new_icon01.png
   android: true
   ios: true
   
   android_12:
     #image: null  # Adaptive icon 비활성화 (동그라미 제거)
-    image: assets/logo-splash.png  # 전체 이미지로 설정
-    color: "#f97917"
+    image: assets/dae_new_icon01.png  # 전체 이미지로 설정
+    color: "#ffffff"
 
   # To add assets to your application, add an assets section, like this:
   # assets:
