@@ -16,7 +16,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ^3.8.1
@@ -63,6 +63,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
   flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.6
 
 flutter_launcher_icons:
   android: true
@@ -79,17 +80,17 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/dae_new_icon01.png
+    - assets/splash_icon.png
 
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/dae_new_icon01.png
+  image: assets/splash_icon.png
   android: true
   ios: true
   
   android_12:
     #image: null  # Adaptive icon 비활성화 (동그라미 제거)
-    image: assets/dae_new_icon01.png  # 전체 이미지로 설정
+    image: assets/splash_icon.png  # 전체 이미지로 설정
     color: "#ffffff"
 
   # To add assets to your application, add an assets section, like this:

@@ -2,111 +2,100 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 	<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleDisplayName</key>
-	<string>Daeaeng</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>daeaeng</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>$(FLUTTER_BUILD_NAME)</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-
-	<!-- ✅ 지원 방향 설정 -->
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-
-	<!-- ✅ 앱 성능 향상 관련 설정 -->
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-
-	<!-- ✅ 사용자 권한 안내 (필수) -->
-	<key>NSCameraUsageDescription</key>
-	<string>이 앱은 사진 촬영을 위해 카메라 접근 권한이 필요합니다.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>이 앱은 갤러리에서 사진을 선택하기 위해 사진 라이브러리 접근 권한이 필요합니다.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>이 앱은 사진을 저장하기 위해 사진 라이브러리 접근 권한이 필요합니다.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>이 앱은 오디오 녹음을 위해 마이크 접근 권한이 필요합니다.</string>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>이 앱은 개발 도중 로컬 네트워크 접근을 위해 권한이 필요합니다.</string>
-	<key>NSUserNotificationUsageDescription</key>
-	<string>앱에서 알림을 보내기 위해 권한이 필요합니다.</string>
-
-
-	<key>UISupportsDocumentBrowser</key> <true/> 
-	<key>LSSupportsOpeningDocumentsInPlace</key> <true/> 
-	<key>UIFileSharingEnabled</key> <true/>
-
-
-	<!-- ✅ 푸시 알림 권한 요청 -->
-	<key>NSUserNotificationAlertStyle</key>
-	<string>Alert</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>fetch</string>
-		<string>processing</string>
-		<string>remote-notification</string>
-	</array>
-
-	<!-- ✅ 파일 다운로드 완료 안내 (FlutterDownloader의 커스텀 키로 보임) -->
-	<key>FDAllFilesDownloadedMessage</key>
-	<string>파일 다운로드가 완료되었습니다</string>
-
-	<!-- ✅ Firebase 알림 허용 (선택적) -->
-	<!--
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<true/>
-	-->
-
-	<!-- ✅ 문서 폴더 접근 권한 설명 -->
-	<key>NSDocumentsFolderUsageDescription</key>
-	<string>이 앱은 파일을 저장하기 위해 문서 폴더에 접근합니다.</string>
-
-	<!-- ✅ URL scheme 사용 허용 (필요한 경우만) -->
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>itms-services</string>
-	</array>
-
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>이 앱은 일부 기능을 위해 블루투스 접근 권한이 필요할 수 있습니다.</string>
-
-	<!-- ✅ 앱 내 웹뷰 관련 설정 (선택사항) -->
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/> <!-- http 통신 허용 (가급적 https 사용하는 것이 좋음) -->
+		<key>CFBundleDevelopmentRegion</key>
+		<string>$(DEVELOPMENT_LANGUAGE)</string>
+		<key>CFBundleDisplayName</key>
+		<string>Daeaeng</string>
+		<key>CFBundleExecutable</key>
+		<string>$(EXECUTABLE_NAME)</string>
+		<key>CFBundleIdentifier</key>
+		<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+		<key>CFBundleInfoDictionaryVersion</key>
+		<string>6.0</string>
+		<key>CFBundleName</key>
+		<string>daeaeng</string>
+		<key>CFBundlePackageType</key>
+		<string>APPL</string>
+		<key>CFBundleShortVersionString</key>
+		<string>$(FLUTTER_BUILD_NAME)</string>
+		<key>CFBundleSignature</key>
+		<string>????</string>
+		<key>CFBundleVersion</key>
+		<string>$(FLUTTER_BUILD_NUMBER)</string>
+		<key>LSRequiresIPhoneOS</key>
+		<true/>
+		<key>UILaunchStoryboardName</key>
+		<string>LaunchScreen</string>
+		<key>UIMainStoryboardFile</key>
+		<string>Main</string>
+		<!-- ✅ 지원 방향 설정 -->
+		<key>UISupportedInterfaceOrientations</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+		<key>UISupportedInterfaceOrientations~ipad</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationPortraitUpsideDown</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+		<!-- ✅ 앱 성능 향상 -->
+		<key>CADisableMinimumFrameDurationOnPhone</key>
+		<true/>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+		<true/>
+		<!-- ✅ 사용자 권한 안내 -->
+		<key>NSCameraUsageDescription</key>
+		<string>이 앱은 사진 촬영을 위해 카메라 접근 권한이 필요합니다.</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>이 앱은 갤러리에서 사진을 선택하기 위해 사진 라이브러리 접근 권한이 필요합니다.</string>
+		<key>NSPhotoLibraryAddUsageDescription</key>
+		<string>이 앱은 사진을 저장하기 위해 사진 라이브러리 접근 권한이 필요합니다.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>이 앱은 오디오 녹음을 위해 마이크 접근 권한이 필요합니다.</string>
+		<key>NSLocalNetworkUsageDescription</key>
+		<string>이 앱은 개발 도중 로컬 네트워크 접근을 위해 권한이 필요합니다.</string>
+		<key>NSUserNotificationUsageDescription</key>
+		<string>앱에서 알림을 보내기 위해 권한이 필요합니다.</string>
+		<key>UISupportsDocumentBrowser</key>
+		<true/>
+		<key>LSSupportsOpeningDocumentsInPlace</key>
+		<true/>
+		<key>UIFileSharingEnabled</key>
+		<true/>
+		<!-- ✅ 푸시 알림 -->
+		<key>NSUserNotificationAlertStyle</key>
+		<string>Alert</string>
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>fetch</string>
+			<string>processing</string>
+			<string>remote-notification</string>
+		</array>
+		<key>FDAllFilesDownloadedMessage</key>
+		<string>파일 다운로드가 완료되었습니다</string>
+		<!-- ✅ Firebase 예시 -->
+		<!--
+    <key>FirebaseAppDelegateProxyEnabled</key>
+    <true/>
+    -->
+		<key>NSDocumentsFolderUsageDescription</key>
+		<string>이 앱은 파일을 저장하기 위해 문서 폴더에 접근합니다.</string>
+		<key>LSApplicationQueriesSchemes</key>
+		<array>
+			<string>itms-services</string>
+		</array>
+		<key>NSBluetoothAlwaysUsageDescription</key>
+		<string>이 앱은 일부 기능을 위해 블루투스 접근 권한이 필요할 수 있습니다.</string>
+		<key>NSAppTransportSecurity</key>
+		<dict>
+			<key>NSAllowsArbitraryLoads</key>
+			<true/>
+		</dict>
+		<key>UIStatusBarHidden</key>
+		<false/>
 	</dict>
 </plist>
