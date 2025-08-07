@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "493347575772",
-    "project_id": "daeaeng-fc7b5",
-    "storage_bucket": "daeaeng-fc7b5.firebasestorage.app"
+    "project_number": "905320964135",
+    "project_id": "buildernet-a896b",
+    "storage_bucket": "buildernet-a896b.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:493347575772:android:58dfd81b1f2a8e1c0de119",
+        "mobilesdk_app_id": "1:905320964135:android:72bd058001b94ee528ae02",
         "android_client_info": {
-          "package_name": "com.example.daeaeng"
+          "package_name": "com.daeaeng.app"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDonFVImK31DcGQ_eEY7tbpTpKWd9pQ57Y"
+          "current_key": "AIzaSyCiN_RhddH49dtJCGilcgqJF7lv4ryFMGo"
         }
       ],
       "services": {
